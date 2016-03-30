@@ -64,9 +64,8 @@
 
       // Our projection.
       var xy = d3.geo.mercator()
-                .scale(900)
-                .center([-39.9,75.5])
-                .translate([width/2, height/2]);
+                .scale(1800)
+                .center([-39.9,75.5]);
 
       var path = d3.geo.path()
                   .projection(xy)
