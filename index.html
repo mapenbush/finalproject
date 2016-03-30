@@ -12,10 +12,15 @@
     @import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css);
 @import url(../style.css?aea6f0a);
 
-<p>map {
+  <title>URBAN EXTENT</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <p>
+map {
   width: 960px;
   height: 500px;
-}</p>
+}
 
 svg {
   position: relative;
@@ -31,11 +36,7 @@ path {
 path:hover {
   fill: brown;
   fill-opacity: .7;
-}
-  <title>URBAN EXTENT</title>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-</head>
-<body>
+}</p>
   <script>
 
 var map = new L.Map("map", {center: [37.8, -96.9], zoom: 4})
