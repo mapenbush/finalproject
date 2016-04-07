@@ -47,104 +47,87 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://d3js.org/topojson.v0.min.js"></script>
   <script>
+console.log('This would be the main JS file.');
+//basemap
+var map = L.map("map").setView([39.952451, -75.163459], 13);
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			maxZoom: 18,
+			id: 'kirstenkurz.pedhc4gd',
+			token: 'pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ'
+			}).addTo(map);
 
-    function main() {
-      var alldata;
-      var startd = '1950-01-01';
-      var start = new Date(startd);
-      var curdate = start;
-        $('#clock').text('01/01/1950')
+//color
 
-      var svg = d3.select("body")
-                  .append("svg")
-                  // .call(d3.behavior.zoom()
-                  //     .on("zoom", redraw))
-                  // .append("g");
+function getColor(d) {
+			return d > 2000 ? '#7a0177' :
+			       d > 1950  ? '#ae017e' :
+			       d > 1900  ? '#dd3497' :
+			       d > 1850  ? '#f768a1' :
+			       d > 1800   ? '#fa9fb5' :
+			       d > 1750  ? '#fcc5c0' :
+			       d > 1600   ? '#feebe2' :
+				   d > 0     ? '#fffff' :
+			                  '#66666';
+		}
 
+function color(feature) {
+			return {
+				fillOpacity: 1.0,
+				fillColor: getColor(feature.properties.Min_Year_B)
+			};
+		}
+function oneInfo (feature, layer) {
+		layer.bindPopup("<h3>Median Home Value:"+feature.properties.Min_Year_B+"</h3>");
+	};
 
-      // Our projection.
-      var xy = d3.geo.mercator()
-                .scale(900)
-                .center([-95,40]);
-
-      var path = d3.geo.path()
-                  .projection(xy)
-
-      var colors = ["#edf8fb", "#bfd3e6", "#9ebcda", "#8c96c6", "#8856a7","#810f7c"];
-
-      var fill = d3.scale.linear()
-          .domain([0, 1, 4, 16, 64, 256])
-          .range(colors);
-
-
-      svg.append("g").attr("id", "first_layer");
-
-      d3.json("http://osm2.cartodb.com/api/v2/sql?q=SELECT the_geom, iso, 0 as damage FROM us_states WHERE the_geom IS NOT NULL&format=geojson&dp=5", function(geojson) {
-      //var subunits = topojson.object(collection);
-      // var tj = {countries: {type: "GeometryCollection", geometries: []}};
-      // for (i in collection.objects){
-      //   tj.countries.geometries.push(collection.objects[i])
-      // }
-      // collection.objects = tj
-      var idx = {};
-      var vals = {};
-      for (var i = 0; i<geojson.features.length; ++i){
-        idx[geojson.features[i].properties.iso] = i;
-        vals[geojson.features[i].properties.iso] = 0;
-      }
-
-      var chart = svg.select("#first_layer")
-        
-      var g = chart.selectAll("path")
-          .data(geojson.features)
-        .enter().append("path")
-        .attr("class", function(d){ return d.iso })
-        .attr("fill", function(d){ return fill(vals[d.properties.iso])})
-        .attr("stroke-width", "0.5px")
-        .attr("fill-opacity", "0.7")
-        .attr("d", path.projection(xy));
-
-      var damage;
-      var render = function(){
-        // console.log('rend')
-        g
-          .data(geojson.features)
-            .transition().duration(2)
-            .attr("fill", function(d){ 
-              // console.log(fill(vals[d.properties.iso])); 
-              return fill(Math.floor(vals[d.properties.iso]))})
-      }
-      var iterateDays = function(){
-        var d = ('0' + curdate.getDate()).slice(-2)+'/'+('0' + (curdate.getMonth()+1)).slice(-2)+'/'+curdate.getFullYear();
-        // console.log(d)
-        for (i in vals){
-          if (vals[i]>=0) vals[i] = vals[i] * 0.98;
-        }
-        if (d in damage){
-          for (s in damage[d]){
-            var val = damage[d][s]
-            vals[s] += val;
-          }
-        }
-        curdate.setDate( curdate.getDate() + 1 );
-        render();
-        $('#clock').text(d);
-        if (curdate <= Date.now()) setTimeout(iterateDays, 4);
-      }
-      d3.json("http://osm2.cartodb.com/api/v2/sql?q=SELECT damage,date,injuries,size,state FROM table_1950_2012", function(json) {
-        var data = json.rows;
-        damage = {};
-        for(var i = 0; i<data.length; ++i){
-          if(!(data[i].date in damage)) damage[data[i].date] = {};
-          if(!(data[i].state in damage[data[i].date])) damage[data[i].date][data[i].state] = data[i].damage + 1;
-        }
-
-        iterateDays();
-        })
-
-      });
-    }
-    window.onload = main;
+//building layers
+var one = L.geoJson(pre, {
+	style: color,
+	onEachFeature: oneInfo
+	}).addTo(map);
+var two = L.geoJson(sevenFive, {
+	style: color
+	}).addTo(map);
+var three = L.geoJson(eight, {
+	style: color
+	}).addTo(map); 
+var four = L.geoJson(eightFive, {
+	style: color
+	}).addTo(map); /*
+var five = L.geoJson(nine, {
+	style: color
+	}).addTo(map); 
+var six = L.geoJson(nineFive, {
+	style: color
+	}).addTo(map);*/
+var seven = L.geoJson(post, {
+	style: color
+	}).addTo(map); 
+	
+	
+//toggle buttons
+$("#pre").click(function () {
+		if ( map.hasLayer (one)) {
+			map.removeLayer (one);
+		} else {
+			map.addLayer (one);
+		};
+	});
+$("#1750").click(function () {
+		if ( map.hasLayer (two)) {
+			map.removeLayer (two);
+		} else {
+			map.addLayer (two);
+		};
+	});
+$("#1800").click(function () {
+		if ( map.hasLayer (three)) {
+			map.removeLayer (three);
+		} else {
+			map.addLayer (three);
+		};
+	});
   </script>
 
 
