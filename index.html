@@ -1,104 +1,49 @@
-
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<head>  
+<title>Traveling in Pyongyang</title>  
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>  
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>  
+<style>   
+#map{ height: 100% }  
+</style>
 
-  </head>
-    
-  <body>
-    <div id="map"></div>
-  </body>
+</head>
+<body> 
+	<div id="map">
+	</div>
 
-  <script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/topojson.v0.min.js"></script>
-  <script>
-console.log('This would be the main JS file.');
-//basemap
-var map = L.map("map").setView([39.952451, -75.163459], 13);
-			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			maxZoom: 18,
-			id: 'kirstenkurz.pedhc4gd',
-			token: 'pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ'
-			}).addTo(map);
-
-//color
-
-function getColor(d) {
-			return d > 2000 ? '#7a0177' :
-			       d > 1950  ? '#ae017e' :
-			       d > 1900  ? '#dd3497' :
-			       d > 1850  ? '#f768a1' :
-			       d > 1800   ? '#fa9fb5' :
-			       d > 1750  ? '#fcc5c0' :
-			       d > 1600   ? '#feebe2' :
-				   d > 0     ? '#fffff' :
-			                  '#66666';
-		}
-
-function color(feature) {
-			return {
-				fillOpacity: 1.0,
-				fillColor: getColor(feature.properties.Min_Year_B)
-			};
-		}
-function oneInfo (feature, layer) {
-		layer.bindPopup("<h3>Median Home Value:"+feature.properties.Min_Year_B+"</h3>");
+	 <script> 
+	var streets = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+	}), stamen = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.{ext}', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+		subdomains: 'abcd',
+		ext: 'png'
+	}), Thunderforest_TransportDark = L.tileLayer('http://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	maxZoom: 19
+	}),
+	Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+	})
+	;
+	
+	var map = L.map('map', {
+	    center: [39.0202, 125.7625],
+	    zoom: 14,
+	    layers: [stamen]
+	});
+	
+	var baseMaps = {
+	    "Stamen" : stamen,
+	    "Dark" : Thunderforest_TransportDark,
+	    "Streets": streets,
+	    "Imagery" : Esri_WorldImagery
 	};
-
-//building layers
-var one = L.geoJson(pre, {
-	style: color,
-	onEachFeature: oneInfo
-	}).addTo(map);
-var two = L.geoJson(sevenFive, {
-	style: color
-	}).addTo(map);
-var three = L.geoJson(eight, {
-	style: color
-	}).addTo(map); 
-var four = L.geoJson(eightFive, {
-	style: color
-	}).addTo(map); /*
-var five = L.geoJson(nine, {
-	style: color
-	}).addTo(map); 
-var six = L.geoJson(nineFive, {
-	style: color
-	}).addTo(map);*/
-var seven = L.geoJson(post, {
-	style: color
-	}).addTo(map); 
 	
-	
-//toggle buttons
-$("#pre").click(function () {
-		if ( map.hasLayer (one)) {
-			map.removeLayer (one);
-		} else {
-			map.addLayer (one);
-		};
-	});
-$("#1750").click(function () {
-		if ( map.hasLayer (two)) {
-			map.removeLayer (two);
-		} else {
-			map.addLayer (two);
-		};
-	});
-$("#1800").click(function () {
-		if ( map.hasLayer (three)) {
-			map.removeLayer (three);
-		} else {
-			map.addLayer (three);
-		};
-	});
-  </script>
 
-
-</html>
+	L.control.layers(baseMaps).addTo(map);
+	 
+	 </script>
+ </body>
+ </html>
