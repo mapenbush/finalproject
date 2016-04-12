@@ -23,14 +23,11 @@
 		subdomains: 'abcd',
 		ext: 'png'
 	}), y1850 = L.tileLayer(
-    'https://api.mapbox.com/styles/v1/mquackenbush/cilfdcloc003g9pkvviwuybx0.html?title=true&access_token=' + L.mapbox.accessToken, {
+    'https://api.mapbox.com/styles/v4/mquackenbush.3pyck3vj/{z}/{x}/{y}.{format}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
         zoomOffset: -1,
         attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }),
-	Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-	})
+    })
 	;
 	
 	var map = L.map('map', {
@@ -42,8 +39,7 @@
 	var baseMaps = {
 	    "Stamen" : stamen,
 	    "Dark" : y1850,
-	    "Streets": streets,
-	    "Imagery" : Esri_WorldImagery
+	    "Streets": streets
 	};
 	
 
