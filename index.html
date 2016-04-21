@@ -14,9 +14,36 @@
 
 </head>
 <body>
- 
+ <div id="overlay">
+  <div id="overlay-content">
+    This will all vanish in 5 seconds ...
+  </div>
+</div>
 	<div id="map">
 	</div>
+	
+<script>
+		
+		$.fn.center = function () {
+  this.css("position","absolute");
+  this.css("top", Math.max(0, (
+    ($(window).height() - $(this).outerHeight()) / 2) + 
+     $(window).scrollTop()) + "px"
+  );
+  this.css("left", Math.max(0, (
+    ($(window).width() - $(this).outerWidth()) / 2) + 
+     $(window).scrollLeft()) + "px"
+  );
+  return this;
+}
+
+$("#overlay").show();
+$("#overlay-content").show().center();
+
+setTimeout(function(){    
+  $("#overlay").fadeOut();
+}, 5000);
+	</script>
 	 <script> 
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA';
