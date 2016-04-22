@@ -16,25 +16,37 @@
 </head>
 <body>
 
-	<div id="map">
+	<div id="map1">
+	</div>
+	<div id="map2">
 	</div>
 
 	 <script> 
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA';
 
-var map = L.map('map', {
+var map1 = L.map('map1', {
+	    center: [39.9926, -75.1652],
+	    zoom: 12
+	})
+	
+var map2 = L.map('map2', {
 	    center: [39.9926, -75.1652],
 	    zoom: 12
 	})
 
 // define addLayer function
-function addLayer(layer, name, zIndex) {
+function addLayer1(layer, name, zIndex) {
     layer
         .setZIndex(zIndex)
-        .addTo(map);
+        .addTo(map1);
 }
 
+function addLayer2(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex)
+        .addTo(map2);
+}
 
 // building layers
 var layers =  [L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
