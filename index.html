@@ -126,7 +126,7 @@ var i = 0;
 // set the timer delay function to add building layers to map, calling function name in HTML button
 function gogogo () {           
    setTimeout(function () {    
-      addLayer(layers[i], i); // adding one layer at a time from the array
+      addLayer1(layers[i], i); // adding one layer at a time from the array
       i++;                     
       if (i < arrayLength) {            
          gogogo();             
@@ -137,7 +137,7 @@ function gogogo () {
 //function for extent layers
 function gogogo2 () {           
    setTimeout(function () {    
-      addLayer(exlayers[i], i); // adding one layer at a time from the array
+      addLayer2(exlayers[i], i); // adding one layer at a time from the array
       i++;                     
       if (i < arrayLength2) {            
          gogogo2();             
