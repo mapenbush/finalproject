@@ -87,7 +87,8 @@ function gogogo () {
    }, 3000); // delay between layer adds in milliseconds
 };
 
-L.control.sideBySide(gogogo(), gogogo()).addTo(map);
+
+gogogo().sync(gogogo());
 
 
 </script>
