@@ -33,7 +33,6 @@ body {
     color:white;
     text-align:LEFT;
     padding:5px;
-    width: 50%;
       top: 0px;
   left: 0px;
 }
@@ -44,5 +43,4 @@ body {
     padding:5px;
       top: 0px;
   right: 0px;
-    width: 50%;
 }	
