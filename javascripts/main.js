@@ -128,6 +128,7 @@ var yearsLeft = {
 	};
 	
 var yearsRight = {
+	"Animate" : gogogo(),
 	    "1750" : y1750R,
 	    "1800" : y1800R,
 	    "1850": y1850R,
@@ -185,5 +186,3 @@ map2.sync(map1);
 		gogogo2 ();
 	});
 
-// animate buttons
-<a href=gogogo() target="_parent"><button>ANIMATE!</button></a>
