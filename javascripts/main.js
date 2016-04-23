@@ -184,3 +184,6 @@ map2.sync(map1);
 		gogogo ();
 		gogogo2 ();
 	});
+
+// animate buttons
+<button onclick="gogogo()'">Animate</button>
