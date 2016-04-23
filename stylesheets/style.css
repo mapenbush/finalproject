@@ -38,7 +38,7 @@ body {
   left: 0px;
   width: 49%;
   float:left;
-  font: Verdana;
+  font-family: Verdana;
 }
 #header2 {
     background-color:black;
@@ -49,5 +49,5 @@ body {
   right: 0px;
   width:49%;
   float:right;
-  font: Verdana;
+  font-family: Verdana;
 }	
