@@ -28,15 +28,15 @@ body {
     margin-right: auto;
 }
 
-#button1 {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    float: left;
+#header1 {
+    background-color:black;
+    color:white;
+    text-align:LEFT;
+    padding:5px;
 }
-	
+#header2 {
+    background-color:black;
+    color:white;
+    text-align:RIGHT;
+    padding:5px;
+}	
