@@ -28,7 +28,7 @@ body {
     margin-right: auto;
 }
 
-.button {
+#button1 {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
