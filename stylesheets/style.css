@@ -31,8 +31,8 @@ body {
 
 #header1 {
     background-color:black;
-    color:#f9fd00;
-    text-align:LEFT;
+    color:#fa4444;
+    text-align:CENTER;
     padding:5px;
       top: 0px;
   left: 0px;
@@ -42,8 +42,8 @@ body {
 }
 #header2 {
     background-color:black;
-    color:#f9fd00;
-    text-align:RIGHT;
+    color:#fa4444;
+    text-align:CENTER;
     padding:5px;
       top: 0px;
   right: 0px;
