@@ -30,21 +30,21 @@ body {
 
 #header1 {
     background-color:black;
-    color:white;
+    color:#e8e4e4;
     text-align:LEFT;
     padding:5px;
       top: 0px;
   left: 0px;
-  width: 33%;
+  width: 50%;
   float:left;
 }
 #header2 {
     background-color:black;
-    color:white;
+    color:#e8e4e4;
     text-align:RIGHT;
     padding:5px;
       top: 0px;
   right: 0px;
-  width:33%;
+  width:50%;
   float:right;
 }	
