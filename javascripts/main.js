@@ -128,7 +128,6 @@ var yearsLeft = {
 	};
 	
 var yearsRight = {
-	"Animate" : gogogo(),
 	    "1750" : y1750R,
 	    "1800" : y1800R,
 	    "1850": y1850R,
