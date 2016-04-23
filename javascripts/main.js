@@ -189,7 +189,7 @@ map2.sync(map1);
 
 	$("#splasher").click(function(){
 		$("#splasher").fadeOut('slow');
-		gogogo ();
-		gogogo2 ();
+		gogogo();
+		gogogo2();
 	});
 
