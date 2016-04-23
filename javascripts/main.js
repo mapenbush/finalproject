@@ -115,11 +115,20 @@ var exLayers =  [
 
    ];
 
+var yearsLeft = {
+	    "1750" : y1750L,
+	    "1800" : y1800L,
+	    "1850": y1850L,
+	    "1900" : y1900L,
+	    "1950" : y1950L,
+	    "2000": y2000L,
+	    "Present" : y2016L
+	};
    
    
    
 //toggle layers
-L.control.layers(layers).addTo(map1);
+L.control.layers(yearsLeft).addTo(map1);
 L.control.layers(exLayers).addTo(map2);
 
 
