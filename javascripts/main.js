@@ -124,8 +124,7 @@ var yearsLeft = {
 	    "1900" : y1900L,
 	    "1950" : y1950L,
 	    "2000": y2000L,
-	    "Present" : y2016L,
-	    "Animate" : gogogo()
+	    "Present" : y2016L
 	};
 	
 var yearsRight = {
@@ -135,8 +134,7 @@ var yearsRight = {
 	    "1900" : y1900R,
 	    "1950" : y1950R,
 	    "2000" : y2000R,
-	    "Present": y2016R,
-	    "Animate" : gogogo2()
+	    "Present": y2016R
 	};
    
    
