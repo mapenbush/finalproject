@@ -186,5 +186,4 @@ map2.sync(map1);
 	});
 
 // animate buttons
-<button onclick="gogogo()">
-     ANIMATE</button>
+<a href=gogogo() target="_parent"><button>ANIMATE!</button></a>
