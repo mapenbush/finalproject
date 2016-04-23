@@ -140,7 +140,7 @@ var yearsRight = {
    
 //toggle layers
 L.control.layers(yearsLeft).addTo(map1);
-L.control.layers(exLayers).addTo(map2);
+L.control.layers(yearsRight).addTo(map2);
 
 
 
