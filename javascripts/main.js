@@ -40,7 +40,7 @@ var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 // you would usually use the gridControl to display a nice box in the corner
 // with your data, since we want a popup instead we won't initialize the gridControl
 
-yGrid.on('click', function(e) {
+yGrid.on('hover', function(e) {
     if (!e.data) return;
     var popup = L.popup()
         .setLatLng(e.latLng)
