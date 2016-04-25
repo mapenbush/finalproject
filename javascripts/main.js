@@ -31,25 +31,7 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
     
 y2016L.addTo(map1);
-
-var utfGrid = L.mapbox.gridLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'mquackenbush.7dhghgyl',
-			token: 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'
-    });
-
-utfGrid.addTo(map1);
-utfGrid.on('mouseover', function (e) {
-			if (e.data) {
-				document.getElementById('hover').innerHTML = 'hover: ' + e.data.Min_Year_B;
-			} else {
-				document.getElementById('hover').innerHTML = 'hover: nothing';
-			}
-			//console.log('mouseover: ' + e.data);
-		});
-var utfControl = L.mapbox.gridControl(utfGrid).addTo(map1);
-
-utfGrid.gridControl.options.follow = true;
+y2016L.gridControl.options.follow = true;
 
 var y2016R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
