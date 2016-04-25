@@ -55,7 +55,19 @@ body {
   width:45%;
   float:right;
   font-family: Helvetica;
-}	
+}
+#trigger1 {
+	position: absolute;
+	left: 45%;
+	top:10px;
+	z-index: 999;
+}
+#trigger2 {
+	position: absolute;
+	right: 15px;
+	top:10px;
+	z-index:999;
+}
 
 #footer {
     background-color:black;
