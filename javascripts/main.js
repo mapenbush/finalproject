@@ -35,10 +35,10 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 y2016L.addTo(map1);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'
-var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
+var utfGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 
 
-yGrid.on('click', function(e) {
+utfGrid.on('click', function(e) {
     if (e.data) {L.popup()
     .setContent(e.data.min_year_b)
         .openOn(map1);
