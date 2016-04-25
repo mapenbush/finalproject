@@ -40,9 +40,9 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
    y2000R.addTo(map2);
    
-   addLayer(y2016L, L.mapbox.gridLayer('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'), 
-			'Min_Year_B', 1);
-   var gridControl = L.mapbox.gridControl(gridlayer, {follow: false}).addTo(map);
+var gridLayer = L.mapbox.gridLayer(y2016);
+map.addLayer(gridLayer);
+map.addControl(L.mapbox.gridControl(gridLayer))
 
 
 // building layers
