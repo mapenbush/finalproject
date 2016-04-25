@@ -34,6 +34,8 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     
 y2016L.addTo(map1);
 
+map1.gridControl.options.follow = true;
+
 var utfGridInfo = L.mapbox.gridLayer('mquackenbush.7dhghgyl',{accessToken: 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'}).addTo(map1);
 
 
