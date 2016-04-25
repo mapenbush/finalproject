@@ -11,12 +11,14 @@ var map2 = L.map('map2', {
 	})
 
 // define addLayer function
-function addLayer(layer, name) {
+function addLayer(layer, name, zIndex) {
     layer
+        .setZIndex(zIndex)
         .addTo(map1);
 }
-function addLayer2(layer, name) {
+function addLayer2(layer, name, zIndex) {
     layer
+        .setZIndex(zIndex)
         .addTo(map2);
 }
 //add basemaps
@@ -174,6 +176,14 @@ function gogogo2 () {
       }                        
    }, 7000); // delay between layer adds in milliseconds
 };
+
+function onClick() {
+    clearTimeout(setTimeout);
+    gogogo();
+}
+
+
+
 //sync maps
 map1.sync(map2);
 map2.sync(map1);
