@@ -40,7 +40,6 @@ var utfGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 
 utfGrid.on('click', function(e) {
     if (e.data) {L.popup()
-    .setContent(e.data.min_year_b)
         .openOn(map1);
 }
 });
