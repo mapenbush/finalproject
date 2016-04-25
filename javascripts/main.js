@@ -52,7 +52,7 @@ utfGrid.on('mouseover', function (e) {
 			//console.log('mouseover: ' + e.data);
 });
 
-L.map('map1').addLayer(utfGrid);
+.addLayer(utfGrid);
 
 // building layers
 var layers =  [y1750L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
