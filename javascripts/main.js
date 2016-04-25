@@ -34,28 +34,6 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     
 y2016L.addTo(map1);
 
-L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA';
-var utfGrid = new L.UtfGrid('http://{s}.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.grid.json?callback={cb}', {
-    resolution: 2
-});
-
-//Use a LayerGroup to group together a TileLayer and our UtfGrid layer
-		//This enables us to toggle them both together in the layers dialog
-		var interactiveLayerGroup = L.layerGroup([
-			y2016L,
-			utfGrid
-		]);
-		
-		
-		//Events
-		utfGrid.on('click', function (e) {
-			if (e.data) {
-				document.getElementById('click').innerHTML = 'click: ' + e.data.min_year_b;
-			} else {
-				document.getElementById('click').innerHTML = 'click: nothing';
-			}
-		}); 
-
 
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -156,7 +134,7 @@ var yearsLeft = {
 	    "1900" : y1900L,
 	    "1950" : y1950L,
 	    "2000": y2000L,
-	    "Present" : interactiveLayerGroup
+	    "Present" : y2016L
 	};
 	
 var yearsRight = {
