@@ -363,7 +363,7 @@ var yearsRight = {
    
 //toggle layers
 
-L.control.layers(yearsRight).addTo(map);
+L.control.layers(yearsRight).addTo(map2);
  var arrayLength = exLayers.length;
 var i = 0
                     
