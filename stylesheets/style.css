@@ -16,7 +16,7 @@ body {
 #splasher {
 	height: 400px;
 	width: 600px;
-	border-radius: 10px;
+	border-radius: 25px;
 	background-color: gray;
 	position: absolute;
     top: 0;
