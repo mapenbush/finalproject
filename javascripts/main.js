@@ -40,7 +40,7 @@ var 2016Grid = L.mapbox.gridLayer('mquackenbush.7dhghgyl','pk.eyJ1IjoibXF1YWNrZW
 // you would usually use the gridControl to display a nice box in the corner
 // with your data, since we want a popup instead we won't initialize the gridControl
 
-nprGrid.on('click', function(e) {
+2016Grid.on('click', function(e) {
     if (!e.data) return;
     var popup = L.popup()
         .setLatLng(e.latLng)
