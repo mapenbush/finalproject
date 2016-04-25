@@ -40,7 +40,7 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
    y2000R.addTo(map2);
    
-var gridLayer = L.mapbox.gridLayer('mquackenbush.7dhghgyl','pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA');
+var gridLayer = L.mapbox.gridLayer('mquackenbush.7dhghgyl', accessToken:'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA');
 map1.addLayer(gridLayer);
 map1.addControl(L.mapbox.gridControl(gridLayer))
 
