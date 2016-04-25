@@ -41,10 +41,9 @@ var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 // with your data, since we want a popup instead we won't initialize the gridControl
 
 yGrid.on('click', function(e) {
-    if (e.data && e.data.Min_Year_B);
+    if (!e.data) return;
     var popup = L.popup()
-        .setLatLng(e.latLng)
-        .setContent(e.data.Min_Year_B)
+        .setContent(e.data.name)
         .openOn(map1);
 });
 
