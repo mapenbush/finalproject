@@ -35,12 +35,12 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 y2016L.addTo(map1);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'
-var 2016Grid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map);
+var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map);
 
 // you would usually use the gridControl to display a nice box in the corner
 // with your data, since we want a popup instead we won't initialize the gridControl
 
-2016Grid.on('click', function(e) {
+yGrid.on('click', function(e) {
     if (!e.data) return;
     var popup = L.popup()
         .setLatLng(e.latLng)
