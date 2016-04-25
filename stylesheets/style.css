@@ -54,6 +54,17 @@ body {
   font-family: Helvetica;
 }	
 
+#footer {
+    background-color:black;
+    color:#e8e4e4;
+    text-align:CENTER;
+    padding:5px;
+  right: 0px;
+  width:40%;
+  float:bottom;
+  font-family: Helvetica;
+}
+
 #button {
     display: block;
     width:150px;
