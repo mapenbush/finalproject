@@ -189,7 +189,7 @@ map2.sync(map1);
 	});
 
 //animate one function
-function animate() {
+function animateMaps() {
 	gogogo();
 	gogogo2();
 }
