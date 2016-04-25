@@ -38,7 +38,7 @@ body {
     padding:5px;
       top: 0px;
   left: 0px;
-  width: 49%;
+  width: 40%;
   float:left;
   font-family: Helvetica;
 }
@@ -49,7 +49,7 @@ body {
     padding:5px;
       top: 0px;
   right: 0px;
-  width:49%;
+  width:40%;
   float:right;
   font-family: Helvetica;
 }	
@@ -62,7 +62,7 @@ body {
     text-align:center;
     background:#a2bb33;
     font-size:20px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica';
     color:#ffffff;
     white-space: nowrap;
     box-sizing: border-box;
