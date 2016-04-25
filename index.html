@@ -19,18 +19,7 @@
 </head>
 <body>
 	
-<style>
-.legend label,
-.legend span {
-  display:block;
-  float:left;
-  height:15px;
-  width:20%;
-  text-align:center;
-  font-size:9px;
-  color:#808080;
-  }
-</style>
+
 
 	<div id="map1"></div>
 	<div id="map2"></div> 
@@ -62,6 +51,21 @@
 	 <p><a id="button" href=#>Animate</a></p>
 	</div>
 
+<style>
+.legend label,
+.legend span {
+  display:block;
+  float:left;
+  height:15px;
+  width:20%;
+  text-align:center;
+  font-size:9px;
+  color:#808080;
+  }
+</style>
+
+<!-- Set the display of this container to none so we can
+     add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <strong>The Title or Explanation of your Map</strong>
   <nav class='legend clearfix'>
@@ -77,11 +81,13 @@
     <label>100%</label>
     <small>Source: <a href="#link to source">Name of source</a></small>
 </div>
+<div id='map' class='dark'></div>
 
 <script>
-var legend = L.control({position: 'bottomright'});
-legend.addTo(map1);
+  map1.legendControl.addLegend(document.getElementById('legend').innerHTML);
 </script>
+
+
 
 <div id="legend">	
 <div id="footer">
