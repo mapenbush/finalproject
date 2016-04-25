@@ -43,7 +43,7 @@ var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 yGrid.on('click', function(e) {
     if (!e.data) return;
     var popup = L.popup()
-        .setContent(e.data.Min_Year_B)
+    .setLatLng(e.LatLng)
         .openOn(map1);
 });
 
