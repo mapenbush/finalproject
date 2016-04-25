@@ -39,7 +39,7 @@ var utfGrid = L.UtfGrid('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?ac
     });
 
 utfGrid.on('mouseover', function (e) {
-    console.log('hover: ' + e.data.Min_Year_B});
+    console.log('hover: ' + e.data.Min_Year_B);
 });
 
 date_info.addTo(map1);
