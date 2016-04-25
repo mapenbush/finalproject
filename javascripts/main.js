@@ -12,8 +12,6 @@ var map2 = L.map('map2', {
 	})
 
 
-map1.legendControl.addLegend(document.getElementById('legend').innerHTML);
-
 // define addLayer function
 function addLayer(layer, name, zIndex) {
     layer
