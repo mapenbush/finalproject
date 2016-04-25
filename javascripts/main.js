@@ -362,7 +362,7 @@ var yearsRight = {
 //toggle layers
 
 L.control.layers(yearsRight).addTo(map2);
- var arrayLength = exLayers.length;
+ var arrayLength2 = exLayers.length;
 var i = 0
                     
 
@@ -371,7 +371,7 @@ function gogogo2 () {
    setTimeout(function () {    
       addLayer(exLayers[i], i); // adding one layer at a time from the array
       i++;                     
-      if (i < arrayLength) {            
+      if (i < arrayLength2) {            
          gogogo2();             
       }                        
    }, 3000); // delay between layer adds in milliseconds
