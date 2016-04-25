@@ -40,7 +40,7 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
    y2000R.addTo(map2);
    
-var gridLayer = L.mapbox.gridLayer(y2016L);
+var gridLayer = L.mapbox.gridLayer('mquackenbush.7dhghgyl');
 map1.addLayer(gridLayer);
 map1.addControl(L.mapbox.gridControl(gridLayer))
 
