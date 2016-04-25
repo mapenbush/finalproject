@@ -46,7 +46,7 @@ yGrid.on('click', function(e) {
         .setLatLng(e.latLng)
         .setContent(e.data.Min_Year_B)
         .openOn(map1);
-});=
+});
 
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
