@@ -5,12 +5,14 @@ var map1 = L.map('map1', {
 	    center: [39.9926, -75.1652],
 	    zoom: 12
 	})
-	
 
 var map2 = L.map('map2', {
 	    center: [39.9926, -75.1652],
 	    zoom: 12
 	})
+
+
+map1.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
 // define addLayer function
 function addLayer(layer, name, zIndex) {
@@ -192,8 +194,6 @@ function onClick() {
 //sync maps
 map1.sync(map2);
 map2.sync(map1);
-
-y2016L.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
 //splash screen
 
