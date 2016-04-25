@@ -42,6 +42,7 @@ yGrid.on('click', function(e) {
     if (e.data) {L.popup()
     .setLatLng(e.latLng)
         .openOn(map1);
+}
 });
 
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
