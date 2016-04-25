@@ -43,7 +43,7 @@ utfGridInfo.on('click', function(e) {
     	L.popup()
         .setLatLng(e.latLng)
         .setContent(e.data.name)
-        .openOn(map);
+        .openOn(map1);
 });
 
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
