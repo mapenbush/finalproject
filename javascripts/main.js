@@ -11,14 +11,12 @@ var map2 = L.map('map2', {
 	})
 
 // define addLayer function
-function addLayer(layer, name, zIndex) {
+function addLayer(layer, name) {
     layer
-        .setZIndex(zIndex)
         .addTo(map1);
 }
-function addLayer2(layer, name, zIndex) {
+function addLayer2(layer, name) {
     layer
-        .setZIndex(zIndex)
         .addTo(map2);
 }
 //add basemaps
