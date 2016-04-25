@@ -188,3 +188,8 @@ map2.sync(map1);
 		gogogo();
 	});
 
+//animate one function
+function animate() {
+	gogogo();
+	gogogo2();
+}
