@@ -39,8 +39,7 @@ var yGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 
 
 yGrid.on('click', function(e) {
-    if (!e.data) return;
-    var popup = L.popup()
+    if (e.data) {L.popup()
     .setLatLng(e.latLng)
         .openOn(map1);
 });
