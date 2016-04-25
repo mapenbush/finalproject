@@ -44,9 +44,15 @@ var utfGrid = new L.UtfGrid('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghg
     resolution: 2
 });
 utfGrid.on('mouseover', function (e) {
-    console.log('hover: ' + e.data.Min_Year_B);
+			if (e.data) {
+				document.getElementById('hover').innerHTML = 'hover: ' + e.data.Min_Year_B;
+			} else {
+				document.getElementById('hover').innerHTML = 'hover: nothing';
+			}
+			//console.log('mouseover: ' + e.data);
 });
 
+L.map('map1').addLayer(utfGrid);
 
 // building layers
 var layers =  [y1750L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
