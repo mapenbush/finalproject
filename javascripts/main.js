@@ -39,7 +39,14 @@ var utfGrid = L.mapbox.gridLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{
     });
 
 utfGrid.addTo(map1);
-
+utfGrid.on('mouseover', function (e) {
+			if (e.data) {
+				document.getElementById('hover').innerHTML = 'hover: ' + e.data.Min_Year_B;
+			} else {
+				document.getElementById('hover').innerHTML = 'hover: nothing';
+			}
+			//console.log('mouseover: ' + e.data);
+		});
 var utfControl = L.mapbox.gridControl(utfGrid).addTo(map1);
 
 var y2016R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
