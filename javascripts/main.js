@@ -42,7 +42,6 @@ utfGrid.on('click', function(e) {
     if (!e.data) return; 
     	var popup = L.popup()
         .openOn(map1);
-}
 });
 
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
