@@ -39,6 +39,10 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 			token: 'pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ'
     });
    y2000R.addTo(map2);
+   
+   addLayer(y2016L, L.mapbox.gridLayer('mquackenbush.7dhghgyl'),'Min_Year_B', 1);
+   var gridControl = L.mapbox.gridControl(gridlayer, {follow: false}).addTo(map);
+
 
 // building layers
 var layers =  [y1750L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
