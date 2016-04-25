@@ -4,7 +4,7 @@
 var map1 = L.map('map1', {
 	    center: [39.9926, -75.1652],
 	    zoom: 12
-	})
+	}, .addLayer(utfGrid))
 var map2 = L.map('map2', {
 	    center: [39.9926, -75.1652],
 	    zoom: 12
@@ -52,7 +52,7 @@ utfGrid.on('mouseover', function (e) {
 			//console.log('mouseover: ' + e.data);
 });
 
-.addLayer(utfGrid);
+
 
 // building layers
 var layers =  [y1750L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
