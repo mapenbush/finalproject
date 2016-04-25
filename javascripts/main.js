@@ -34,6 +34,20 @@ var y2016L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     
 y2016L.addTo(map1);
 
+
+var 2016Grid = L.mapbox.gridLayer('mquackenbush.7dhghgyl','pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA').addTo(map);
+
+// you would usually use the gridControl to display a nice box in the corner
+// with your data, since we want a popup instead we won't initialize the gridControl
+
+nprGrid.on('click', function(e) {
+    if (!e.data) return;
+    var popup = L.popup()
+        .setLatLng(e.latLng)
+        .setContent(e.data.Min_Year_B)
+        .openOn(map);
+});=
+
 var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			maxZoom: 15,
@@ -42,17 +56,6 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
    y2000R.addTo(map2);
 
-var utfGrid = new L.UtfGrid('http://{s}.tiles.mapbox.com/v3/mapbox.geography-class/{z}/{x}/{y}.grid.json?callback={cb}');
-
-		utfGrid.on('click', function (e) {
-			if (e.data) {
-				document.getElementById('click').innerHTML = 'click: ' + e.data.admin;
-			} else {
-				document.getElementById('click').innerHTML = 'click: nothing';
-			}
-		}); 
-
-L.addLayer(utfGrid);
 
 
 // building layers
