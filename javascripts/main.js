@@ -38,7 +38,7 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 			id: 'kirstenkurz.pp5b7478',
 			token: 'pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ'
     });
-   y2016R.addTo(map2);
+   y2000R.addTo(map2);
 
 // building layers
 var layers =  [y1750L = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}', {
