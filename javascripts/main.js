@@ -37,7 +37,7 @@ y2016L.addTo(map1);
 L.mapbox.accessToken = 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA';
 var utfGrid = new L.UtfGrid('http://{s}.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.grid.json?callback={cb}', {
     resolution: 2
-});
+}).addTo(map1);
 
 utfGrid.on('click', function(e) {
     if (!e.data) return; 
