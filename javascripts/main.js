@@ -39,7 +39,8 @@ var utfGrid = L.mapbox.gridLayer('mquackenbush.7dhghgyl').addTo(map1);
 
 
 utfGrid.on('click', function(e) {
-    if (e.data) {L.popup()
+    if (!e.data) return; 
+    	var popup = L.popup()
         .openOn(map1);
 }
 });
