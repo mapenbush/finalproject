@@ -193,7 +193,7 @@ function onClick() {
 map1.sync(map2);
 map2.sync(map1);
 
-map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+y2016L.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
 //splash screen
 
