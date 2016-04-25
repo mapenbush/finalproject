@@ -42,7 +42,17 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
     });
    y2000R.addTo(map2);
 
+var utfGrid = new L.UtfGrid('http://{s}.tiles.mapbox.com/v3/mapbox.geography-class/{z}/{x}/{y}.grid.json?callback={cb}');
 
+		utfGrid.on('click', function (e) {
+			if (e.data) {
+				document.getElementById('click').innerHTML = 'click: ' + e.data.admin;
+			} else {
+				document.getElementById('click').innerHTML = 'click: nothing';
+			}
+		}); 
+
+L.addLayer(utfGrid);
 
 
 // building layers
