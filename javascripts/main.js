@@ -43,13 +43,8 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 var utfGrid = new L.UtfGrid('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.png?access_token={pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ}', {
     resolution: 2
 });
-utfGrid.on('click', function (e) {
-    //click events are fired with e.data==null if an area with no hit is clicked
-    if (e.data) {
-        alert('click: ' + e.data.Min_Year_B);
-    } else {
-        alert('click: nothing');
-    }
+utfGrid.on('mouseover', function (e) {
+    console.log('hover: ' + e.data.Min_Year_B);
 });
 
 
