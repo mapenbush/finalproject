@@ -39,6 +39,8 @@ var utfGrid = new L.UtfGrid('http://{s}.tiles.mapbox.com/v4/mquackenbush.7dhghgy
     resolution: 2
 }).addTo(map1);
 
+
+
 utfGrid.on('click', function(e) {
     if (!e.data) return; 
     	L.popup()
