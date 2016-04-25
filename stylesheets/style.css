@@ -94,7 +94,6 @@ body {
     text-decoration: none;
 }
 
-<style>
 .legend label,
 .legend span {
   display:block;
@@ -105,4 +104,3 @@ body {
   font-size:9px;
   color:#808080;
   }
-</style>
