@@ -193,6 +193,7 @@ function onClick() {
 map1.sync(map2);
 map2.sync(map1);
 
+map1.legendControl.addLegend(document.getElementById('legend').innerHTML);
 //splash screen
 
 	$("#splasher").click(function(){
