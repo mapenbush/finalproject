@@ -93,3 +93,16 @@ body {
 .one a {
     text-decoration: none;
 }
+
+<style>
+.legend label,
+.legend span {
+  display:block;
+  float:right;
+  height:15px;
+  width:20%;
+  text-align:center;
+  font-size:9px;
+  color:#808080;
+  }
+</style>
