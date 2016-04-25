@@ -1,9 +1,10 @@
 	
 	
 //create maps
-var map1 = L.map('map1')
-	.setView([39.9926, -75.1652], 12)
-	.addLayer(utfGrid);
+var map1 = L.map('map1', {
+	    center: [39.9926, -75.1652],
+	    zoom: 12
+	})
 	
 
 var map2 = L.map('map2', {
@@ -40,18 +41,7 @@ var y2000R = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?a
 			token: 'pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ'
     });
    y2000R.addTo(map2);
-   
-var utfGrid = L.UtfGrid('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.png?access_token={pk.eyJ1Ijoia2lyc3Rlbmt1cnoiLCJhIjoiY2lnd2g4ZmdhMHM3d3c5bTUzaGVldzdsMyJ9.fsyf6xgVQAW23HPBuf8glQ}', {
-    resolution: 2
-});
-utfGrid.on('mouseover', function (e) {
-			if (e.data) {
-				document.getElementById('hover').innerHTML = 'hover: ' + e.data.Min_Year_B;
-			} else {
-				document.getElementById('hover').innerHTML = 'hover: nothing';
-			}
-			//console.log('mouseover: ' + e.data);
-});
+
 
 
 
