@@ -36,13 +36,11 @@ y2016L.addTo(map1);
 
 var utfGridInfo = L.mapbox.gridLayer('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.png?',{accessToken: 'pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA'}).addTo(map1);
 
-L.mapbox.gridLayer('https://api.tiles.mapbox.com/v4/mquackenbush.7dhghgyl/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibXF1YWNrZW5idXNoIiwiYSI6ImNpbXdzbTdreTAzOWx1cGtrejZ2MmZjMHIifQ.3odAcWtHPlHtvqJvhOTTYA').addTo(map1);
-
 utfGridInfo.on('click', function(e) {
     if (!e.data) return; 
     	L.popup()
         .setLatLng(e.latLng)
-        .setContent(e.data.name)
+        .setContent(e.data.MIN_YEAR_B)
         .openOn(map1);
 });
 
